@@ -8,7 +8,7 @@ public class PreviewImage
     
     public Asset? Asset { get; }
 
-    public string FilePath => $"images/{Id}.jpeg";
+    public string FilePath => $"{AssetId}/{Id}.jpeg";
 
     private PreviewImage(PreviewImageId id, string originalName, AssetId assetId)
         => (Id, OriginalName, AssetId) = (id, originalName, assetId);

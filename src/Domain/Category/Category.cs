@@ -8,7 +8,7 @@ public class Category
     public string Name { get; private set; }
     public DateTime CreatedAt { get; }
     
-    public ICollection<AssetCategory>? AssetCategories { get; } = [];
+    public ICollection<AssetCategory> AssetCategories { get; } = [];
 
     private Category(CategoryId id, string name, DateTime createdAt)
         => (Id, Name, CreatedAt) = (id, name, createdAt);
