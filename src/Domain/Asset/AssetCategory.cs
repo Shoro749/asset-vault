@@ -10,7 +10,7 @@ public class AssetCategory
     public Asset? Asset { get; } = null;
     public Category.Category? Category { get; } = null;
 
-    public AssetCategory(AssetId assetId, CategoryId categoryId)
+    private AssetCategory(AssetId assetId, CategoryId categoryId)
         => (AssetId, CategoryId) = (assetId, categoryId);
 
     public static AssetCategory New(AssetId assetId, CategoryId categoryId)
