@@ -17,7 +17,8 @@ public class AssetsConfiguration : IEntityTypeConfiguration<Asset>
             .IsRequired();
         
         builder.Property(x => x.Description)
-            .HasColumnType("varchar(255)");
+            .HasColumnType("varchar(255)")
+            .IsRequired();
 
         builder.Property(x => x.UpdatedAt)
             .HasConversion(new DateTimeUtcConverter());
