@@ -8,5 +8,6 @@ public class CreateAssetCommandValidator : AbstractValidator<CreateAssetCommand>
     {
         RuleFor(a => a.Title).NotEmpty().MinimumLength(3).MaximumLength(255);
         RuleFor(a => a.Description).NotEmpty().MinimumLength(3).MaximumLength(255);
+        RuleFor(a => a.Attributes).NotNull();
     }
 }

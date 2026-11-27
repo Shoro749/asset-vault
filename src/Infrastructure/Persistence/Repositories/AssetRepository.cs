@@ -9,11 +9,11 @@ namespace Infrastructure.Persistence.Repositories;
 public class AssetRepository(ApplicationDbContext context) : IAssetRepository, IAssetQueries
 {
     public async Task<IReadOnlyList<Asset>> GetAll(CancellationToken cancellationToken)
-        => await context.Assets.AsNoTracking().ToListAsync(cancellationToken);
+        => await context.Assets.AsNoTracking().ToListAsync(cancellationToken); // Include PreviewImages & AssetCategories
 
     public async Task<Option<Asset>> GetById(AssetId id, CancellationToken cancellationToken)
     {
-        var entity = await context.Assets.FirstOrDefaultAsync(a => a.Id == id, cancellationToken);
+        var entity = await context.Assets.FirstOrDefaultAsync(a => a.Id == id, cancellationToken); // Include PreviewImages & AssetCategories
         
         return entity ?? Option<Asset>.None;
     }
