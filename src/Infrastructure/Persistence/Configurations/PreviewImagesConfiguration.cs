@@ -11,7 +11,7 @@ public class PreviewImagesConfiguration : IEntityTypeConfiguration<PreviewImage>
         builder.HasKey(x => x.Id);
         builder.Property(x => x.Id).HasConversion(x => x.Value, x => new PreviewImageId(x));
 
-        builder.Property(x => x.AssetId) .HasConversion(x => x.Value, x => new AssetId(x));
+        builder.Property(x => x.AssetId).HasConversion(x => x.Value, x => new AssetId(x));
 
         builder.Property(x => x.OriginalName)
             .HasColumnType("varchar(255)")

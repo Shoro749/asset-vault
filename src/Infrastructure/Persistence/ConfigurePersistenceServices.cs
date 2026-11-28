@@ -39,5 +39,9 @@ public static class ConfigurePersistenceServices
         services.AddScoped<AssetRepository>();
         services.AddScoped<IAssetRepository>(provider => provider.GetRequiredService<AssetRepository>());
         services.AddScoped<IAssetQueries>(provider => provider.GetRequiredService<AssetRepository>());
+        
+        services.AddScoped<CategoryRepository>();
+        services.AddScoped<ICategoryRepository>(provider => provider.GetRequiredService<CategoryRepository>());
+        services.AddScoped<ICategoryQueries>(provider => provider.GetRequiredService<CategoryRepository>());
     }
 }

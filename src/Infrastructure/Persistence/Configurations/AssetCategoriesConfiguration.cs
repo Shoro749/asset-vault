@@ -25,6 +25,6 @@ public class AssetCategoriesConfiguration : IEntityTypeConfiguration<AssetCatego
             .WithMany(x => x.AssetCategories)
             .HasForeignKey(x => x.CategoryId)
             .HasConstraintName("fk_asset_categories_categories_id")
-            .OnDelete(DeleteBehavior.Cascade);
+            .OnDelete(DeleteBehavior.Restrict);
     }
 }

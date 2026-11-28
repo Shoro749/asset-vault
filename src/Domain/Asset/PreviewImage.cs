@@ -6,9 +6,9 @@ public class PreviewImage
     public string OriginalName { get; }
     public AssetId AssetId { get; }
     
-    public Asset? Asset { get; }
+    public Asset? Asset { get; private set; }
 
-    public string FilePath => $"{AssetId}/{Id}.jpeg";
+    public string FilePath => $"{AssetId}/{Id}{Path.GetExtension(OriginalName)}";
 
     private PreviewImage(PreviewImageId id, string originalName, AssetId assetId)
         => (Id, OriginalName, AssetId) = (id, originalName, assetId);

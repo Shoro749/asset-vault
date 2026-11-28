@@ -16,8 +16,11 @@ public class AssetsConfiguration : IEntityTypeConfiguration<Asset>
             .HasColumnType("varchar(255)")
             .IsRequired();
         
+        builder.HasIndex(x => x.Title)
+            .IsUnique();
+        
         builder.Property(x => x.Description)
-            .HasColumnType("varchar(255)")
+            .HasColumnType("varchar(500)")
             .IsRequired();
 
         builder.Property(x => x.UpdatedAt)

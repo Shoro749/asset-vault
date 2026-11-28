@@ -7,8 +7,8 @@ public class AssetCategory
     public AssetId AssetId { get; }
     public CategoryId CategoryId { get; }
 
-    public Asset? Asset { get; } = null;
-    public Category.Category? Category { get; } = null;
+    public Asset? Asset { get; private set; }
+    public Category.Category? Category { get; private set; }
 
     private AssetCategory(AssetId assetId, CategoryId categoryId)
         => (AssetId, CategoryId) = (assetId, categoryId);

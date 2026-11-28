@@ -16,6 +16,9 @@ public class CategoriesConfiguration : IEntityTypeConfiguration<Category>
             .HasColumnType("varchar(255)")
             .IsRequired();
 
+        builder.HasIndex(x => x.Name)
+            .IsUnique();
+        
         builder.Property(x => x.CreatedAt)
             .HasConversion(new DateTimeUtcConverter())
             .HasDefaultValueSql("timezone('utc', now())")
