@@ -32,14 +32,14 @@ public class AssetController(ISender sender, IAssetQueries assetQueries) : Contr
     [HttpPost]
     public async Task<ActionResult<AssetDto>> Create([FromBody] AssetDto asset, CancellationToken cancellationToken)
     {
-        var request = new CreateAssetCommand
+        var input = new CreateAssetCommand
         {
             Title = asset.Title,
             Description = asset.Description,
             Attributes = AssetAttributesDto.ToDomainModel(asset.Attributes)
         };
         
-        var result = await sender.Send(request, cancellationToken);
+        var result = await sender.Send(input, cancellationToken);
 
         return result.Match<ActionResult<AssetDto>>(
             a => AssetDto.FromDomainModel(a),
@@ -69,14 +69,39 @@ public class AssetController(ISender sender, IAssetQueries assetQueries) : Contr
     [HttpDelete("{id:guid}")]
     public async Task<ActionResult> DeleteAsset(Guid id, CancellationToken cancellationToken)
     {
-        var request = new DeleteAssetCommand { AssetId = id };
+        var input = new DeleteAssetCommand { AssetId = id };
 
-        var result = await sender.Send(request, cancellationToken);
+        var result = await sender.Send(input, cancellationToken);
 
         return result.Match<ActionResult>(
             _ => NoContent(),
             e => e.ToObjectResult());
     }
-    
-    // [HttpPost("assets/{id:guid}/image")]
+
+    [HttpPost("{id:guid}/images")]
+    public async Task<ActionResult> UploadImage(
+        [FromRoute] Guid id,
+        [FromForm] IFormFile imageFile,
+        CancellationToken cancellationToken)
+    {
+        if (imageFile is null || imageFile.Length == 0)
+        {
+            return BadRequest("Image file is empty.");
+        }
+
+        await using var stream = imageFile.OpenReadStream();
+
+        var command = new UploadAssetImageCommand
+        {
+            AssetId = id,
+            OriginalName = imageFile.FileName,
+            FileStream = stream
+        };
+
+        var result = await sender.Send(command, cancellationToken);
+
+        return result.Match<ActionResult>(
+            _ => Ok(),
+            e => e.ToObjectResult());
+    }
 }
