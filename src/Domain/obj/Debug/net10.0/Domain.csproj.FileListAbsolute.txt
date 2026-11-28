@@ -1,0 +1,12 @@
+E:\programs\ProgramProjects\RiderProjects\asset-vault\src\Domain\bin\Debug\net10.0\Domain.deps.json
+E:\programs\ProgramProjects\RiderProjects\asset-vault\src\Domain\bin\Debug\net10.0\Domain.dll
+E:\programs\ProgramProjects\RiderProjects\asset-vault\src\Domain\bin\Debug\net10.0\Domain.pdb
+E:\programs\ProgramProjects\RiderProjects\asset-vault\src\Domain\obj\Debug\net10.0\Domain.GeneratedMSBuildEditorConfig.editorconfig
+E:\programs\ProgramProjects\RiderProjects\asset-vault\src\Domain\obj\Debug\net10.0\Domain.AssemblyInfoInputs.cache
+E:\programs\ProgramProjects\RiderProjects\asset-vault\src\Domain\obj\Debug\net10.0\Domain.AssemblyInfo.cs
+E:\programs\ProgramProjects\RiderProjects\asset-vault\src\Domain\obj\Debug\net10.0\Domain.csproj.CoreCompileInputs.cache
+E:\programs\ProgramProjects\RiderProjects\asset-vault\src\Domain\obj\Debug\net10.0\Domain.sourcelink.json
+E:\programs\ProgramProjects\RiderProjects\asset-vault\src\Domain\obj\Debug\net10.0\Domain.dll
+E:\programs\ProgramProjects\RiderProjects\asset-vault\src\Domain\obj\Debug\net10.0\refint\Domain.dll
+E:\programs\ProgramProjects\RiderProjects\asset-vault\src\Domain\obj\Debug\net10.0\Domain.pdb
+E:\programs\ProgramProjects\RiderProjects\asset-vault\src\Domain\obj\Debug\net10.0\ref\Domain.dll

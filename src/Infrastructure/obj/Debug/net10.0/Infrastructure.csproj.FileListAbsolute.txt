@@ -14,3 +14,5 @@ E:\programs\ProgramProjects\RiderProjects\asset-vault\src\Infrastructure\obj\Deb
 E:\programs\ProgramProjects\RiderProjects\asset-vault\src\Infrastructure\obj\Debug\net10.0\refint\Infrastructure.dll
 E:\programs\ProgramProjects\RiderProjects\asset-vault\src\Infrastructure\obj\Debug\net10.0\Infrastructure.pdb
 E:\programs\ProgramProjects\RiderProjects\asset-vault\src\Infrastructure\obj\Debug\net10.0\ref\Infrastructure.dll
+E:\programs\ProgramProjects\RiderProjects\asset-vault\src\Infrastructure\bin\Debug\net10.0\Application.dll
+E:\programs\ProgramProjects\RiderProjects\asset-vault\src\Infrastructure\bin\Debug\net10.0\Application.pdb

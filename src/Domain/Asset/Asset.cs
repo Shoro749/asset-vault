@@ -14,11 +14,11 @@ public class Asset
     
     public ICollection<AssetCategory> AssetCategories { get; } = [];
 
-    private Asset(AssetId id, string title, string description, DateTime createdAt, AssetAttributes attributes)
-        => (Id, Title, Description, CreatedAt, Attributes) = (id, title, description, createdAt, attributes);
+    private Asset(AssetId id, string title, string description, DateTime createdAt)
+        => (Id, Title, Description, CreatedAt) = (id, title, description, createdAt);
 
     public static Asset New(AssetId id, string title, string description, AssetAttributes attributes)
-        => new(id, title, description, DateTime.UtcNow, attributes);
+        => new(id, title, description, DateTime.UtcNow) { Attributes = attributes };
 
     public void Update(string title, string description)
     {
